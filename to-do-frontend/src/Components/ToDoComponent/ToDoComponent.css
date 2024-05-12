@@ -1,0 +1,28 @@
+.heading{
+    margin: 3% 25% 0% 25%;
+    width:50%;
+    background-color: black;
+    color:white;
+    text-align: center;
+    padding:1%;
+    /* border:2px white solid; */
+}
+
+.heading input[type="text"]
+{
+width:70%;
+padding:2%;
+border:2px white solid;
+border-radius: 10px;
+margin-right: 10px;
+margin-bottom:2%;
+background-color: black;
+color: white;
+}
+
+.heading button[type="submit"]
+{
+padding: 1.8%;
+width:13%;
+border-radius: 10px;
+}

@@ -1,0 +1,12 @@
+.todoItems,
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin: 1% 30% 0% 30%;
+    width: 40%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1%;
+    border: 2px white solid;
+}
