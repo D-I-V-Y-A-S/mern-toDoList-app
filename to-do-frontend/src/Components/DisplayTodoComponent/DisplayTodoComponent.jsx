@@ -11,14 +11,14 @@ const DisplayTodoComponent = () => {
     const [toDoItems, setToDoItems] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:3500/api/v1/todolist')
+        axios.get('http://localhost:3600/api/v1/todolist')
             .then(response => setToDoItems(response.data))
             .catch(error => console.log(error))
     }, [])
 
     const handleDelete = (item) => {
         axios
-            .delete(`http://localhost:3500/api/v1/todolist/${item}`)
+            .delete(`http://localhost:3600/api/v1/todolist/${item}`)
             .then(response => {
                 if (response.status == 200) {
                     window.location.reload();
@@ -30,7 +30,7 @@ const DisplayTodoComponent = () => {
     }
 
     const handleIcon = (id) => {
-        axios.put(`http://localhost:3500/api/v1/todolist/${id}`)
+        axios.put(`http://localhost:3600/api/v1/todolist/${id}`)
         .then(response=>  {
             if (response.status == 200){
            console.log(response.data.message)
