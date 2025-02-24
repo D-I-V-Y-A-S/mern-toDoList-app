@@ -26,27 +26,23 @@ const ToDoComponent = () => {
   };
 
   return (
-    <React.Fragment>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    <div className="container">
+      <h1 className="heading">TO DO LIST</h1>
+
+      <input
+        type="text"
+        placeholder="Enter your to-do task here..."
+        name="task"
+        id="addTask"
+        value={task}
+        onChange={inputHandler}
+        className="input-task"
       />
 
-      <div className="heading">
-        <h1>TO DO LIST</h1>
-
-        <input
-          type="text"
-          placeholder="Enter your to-do task here..."
-          name="task"
-          id="addTask"
-          value={task}
-          onChange={inputHandler}
-        />
-
-        <button type="submit" onClick={taskHandler}>ADD</button>
-      </div>
-    </React.Fragment>
+      <button type="submit" onClick={taskHandler} className="add-button">
+        ADD
+      </button>
+    </div>
   );
 };
 
