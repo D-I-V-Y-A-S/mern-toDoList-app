@@ -21,5 +21,6 @@ app.use(cors())
 
 app.use('/api/v1/todolist', todoRouter)
 
+const application_url=process.env.application_url
 
-app.listen(PORT, console.log(`Server started running at http://localhost:${PORT}`))
+app.listen(PORT,console.log(`Server started running on ${application_url}`))
