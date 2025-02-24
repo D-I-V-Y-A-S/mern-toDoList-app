@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import BASE_URL from "../../../config";
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></link>
 
@@ -11,14 +12,14 @@ const DisplayTodoComponent = () => {
     const [toDoItems, setToDoItems] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:3600/api/v1/todolist')
+        axios.get(`${BASE_URL}`)
             .then(response => setToDoItems(response.data))
             .catch(error => console.log(error))
     }, [])
 
     const handleDelete = (item) => {
         axios
-            .delete(`http://localhost:3600/api/v1/todolist/${item}`)
+            .delete(`${BASE_URL}/${item}`)
             .then(response => {
                 if (response.status == 200) {
                     window.location.reload();
@@ -30,7 +31,7 @@ const DisplayTodoComponent = () => {
     }
 
     const handleIcon = (id) => {
-        axios.put(`http://localhost:3600/api/v1/todolist/${id}`)
+        axios.put(`${BASE_URL}/${id}`)
         .then(response=>  {
             if (response.status == 200){
            console.log(response.data.message)
