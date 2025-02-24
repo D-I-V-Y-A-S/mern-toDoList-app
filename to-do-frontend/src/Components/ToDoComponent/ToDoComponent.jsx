@@ -12,7 +12,7 @@ const ToDoComponent = () => {
   }
 
   const taskHandler = (event) => {
-    axios.post('http://localhost:3600/api/v1/todolist/add', { todoData: task })
+    axios.post(`${BASE_URL}/add', { todoData: task })
       .then(response => {
         if (response.status === 201) {
           window.location.reload();
