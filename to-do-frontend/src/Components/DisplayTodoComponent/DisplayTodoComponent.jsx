@@ -2,8 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import BASE_URL from "../../../config";
 
-import "bootstrap-icons/font/bootstrap-icons.min.css";
 import { BsCircleFill, BsFillCheckCircleFill } from "react-icons/bs";
+import { FiTrash2 } from "react-icons/fi";
 
 import "./DisplayTodoComponent.css";
 
@@ -62,7 +62,7 @@ const DisplayTodoComponent = () => {
               {item.done ? <del>{item.todoItem}</del> : item.todoItem}
             </span>
 
-            <i className="bi bi-trash" onClick={() => handleDelete(item._id)}></i>
+            <FiTrash2 className="delete-icon" onClick={() => handleDelete(item._id)} />
           </div>
         ))
       )}
