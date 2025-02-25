@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './ToDoComponent.css';
 import axios from 'axios';
-import BASE_URL from "../../../config";  // ✅ Import BASE_URL
+import BASE_URL from "../../../config";  
 
 const ToDoComponent = () => {
-  const [task, setTask] = useState("");  // ✅ Use an empty string
+  const [task, setTask] = useState(""); 
 
   const inputHandler = (event) => {
     setTask(event.target.value);
@@ -12,7 +12,7 @@ const ToDoComponent = () => {
 
   const taskHandler = () => {
     axios
-      .post(`${BASE_URL}/add`, { todoData: task })  // ✅ Fixed backtick issue
+      .post(`${BASE_URL}/add`, { todoData: task })  
       .then(response => {
         if (response.status === 201) {
           window.location.reload();
